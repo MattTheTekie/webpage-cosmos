@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+USER=e63197
+HOST=e63197-ssh.services.easyname.eu
+DIR=html/thym.at/
+
+rsync -avz --delete --exclude=.edirectory public/ ${USER}@${HOST}:${DIR}
+
+exit 0
