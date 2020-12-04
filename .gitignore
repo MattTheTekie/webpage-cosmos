@@ -1,5 +1,5 @@
 # ignore linux directory config
 .directory
 
-# ignore JetBrains IDE's config directory
-.idea/
+# ignore SSH passfile
+sshpf
