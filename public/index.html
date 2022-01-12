@@ -3,7 +3,7 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<meta charset="UTF-8">
 	<title>thym's cosmos</title>
-	<!-- 
+	<!--
 	TL;DR: Do whatever you want with the code, it's yours now https://apeia.midnight.pub/noimadethis.png
 	Copyright 2020 apeia
 	Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
@@ -29,10 +29,10 @@
 		}
 		if (t > 0.75) {
 			star = "~+"
-		}		
+		}
 		if (t > 0.80) {
 			star = "'"
-		}		
+		}
 		if (t > 0.85) {
 			star = "O"
 		}
@@ -73,7 +73,7 @@
 	function spawnStars(){
 		for (var i=0; i < 250*window.innerWidth/2560; i++) {
 			createStar(Math.random() * window.innerWidth, Math.random() * window.innerHeight, Math.random())
-		}	
+		}
 	}
 	function draw() {
 		var canvas = document.getElementById("backcircle")
@@ -87,7 +87,7 @@
 	}
 	/* Map is generated from the following python3 script:
 	from PIL import Image
-	import math 
+	import math
 
 	imgpath = input()
 	def webSpaceFix(a):
@@ -98,7 +98,7 @@
 	charset = " .:=+*#@" #characters in ascending order (darkest is last) it breaks with - and % (more but i didnt test them)
 	charColorEnds = 255/len(charset)
 	def ctoascii(c):
-		if c == 255: 
+		if c == 255:
 			return webSpaceFix(charset[len(charset)-1])
 		k = math.floor(c/charColorEnds)
 		return webSpaceFix(charset[k])
@@ -114,8 +114,8 @@
 			print("['{}'],".format(ctoascii(img.getpixel((x, y)))), end="")
 		print("],", end="")
 	print("]", end="")
-	
-	
+
+
 	run it like this:
 	$ python imgtomap.py > map
 	and type the image path
@@ -129,7 +129,7 @@ var map = [
 		y = Math.round(y)
 		return map[y][x]
 	}
-	
+
 	var s = 64;
 	var x, y;
 	var px, py, mgSq, u, v;
@@ -137,7 +137,7 @@ var map = [
 	var mapHeight = map.length-1;
 	var crotation = Math.random()*(mapHeight*2+1);
 	var rotationSpeed = 0.01;
-	
+
 	window.onresize = function() {
 		var stars = document.getElementsByClassName('star');
 		while(stars[0]) {
@@ -152,11 +152,11 @@ var map = [
 		spawnStars();
 		draw();
 	}
-	
+
 	window.onload = function() {
 	spawnStars();
 	draw();
-	
+
 	var lastUpdate = Date.now();
 		function loop() {
 			var now = Date.now();
@@ -170,7 +170,7 @@ var map = [
 					px = 2*(x-s/2)/s
 					py = 2*(y-s/2)/s
 					mgSq = Math.pow(px, 2) + Math.pow(py, 2)
-					
+
 					wah = Math.sqrt(1- Math.pow(py, 2))
 					px = Math.asin(px/wah) * 2/Math.PI
 					py = Math.asin(py) * 2/Math.PI
@@ -189,7 +189,7 @@ var map = [
 		}
 		setInterval(loop, 100);
 	}
-	
+
 	</script>
 	<style>
 	html, body {
@@ -255,28 +255,28 @@ var map = [
 		75%{    opacity: 0.5; }
 		100%{     opacity: 1;    }
 	}
-   .noselect { 
+   .noselect {
        -webkit-touch-callout: none;
        -webkit-user-select: none;
        -khtml-user-select: none;
        -moz-user-select: none;
        -ms-user-select: none;
         user-select: none;
-    } 
+    }
 	</style>
 </head>
 <body>
 <div class="textcontainer">
-<pre>                           d8b          
+<pre>                           d8b
 
 
-   _   _                 
-  | | | |                
- _| |_| |__  _   _ ____  
-(_   _)  _ \| | | |    \ 
+   _   _
+  | | | |
+ _| |_| |__  _   _ ____
+(_   _)  _ \| | | |    \
   | |_| | | | |_| | | | |
    \__)_| |_|\__  |_|_|_|
-            (____/       
+            (____/
 
 
 </pre>
