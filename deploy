@@ -3,6 +3,6 @@ USER=e63197
 HOST=e63197-ssh.services.easyname.eu
 DIR=html/thym.at/
 
-/usr/bin/sshpass -p $(cat sshpf) rsync -avz --delete public/ ${USER}@${HOST}:${DIR}
+sshpass -p $(cat sshpf) rsync -avz --delete public/ ${USER}@${HOST}:${DIR}
 
 exit 0
